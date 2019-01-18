@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Office Salary Accounting</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center">Salary Count</h1>
+        <hr>
+        <div class="form-inline">
+            <label for="month">Salary Month :</label> &nbsp;
+            <input type="month" class="form-control col-sm-2 text-center">
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 class="text-center">Lunch Bill</h3>
+                    <hr>
+                    <div class="input-group">
+                        <input type="number" class="form-control col-sm-4" placeholder="Office Days" id="officeDay"> &nbsp
+                        <input type="number" class="form-control col-sm-4" placeholder="Per Day Bill" id="dayBill"> &nbsp
+                        <button class="btn btn-primary" type="button" id="lunchAdd">Add</button>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="day">Total Office Day</label>
+                        </div>
+                        <label for="day">=</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control text-center" id="totalOfficeDay" readonly>
+                        </div>
+                        <label for="day">Day</label>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="day">Per Day Bill</label>
+                        </div>
+                        <label for="day">=</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control text-center" id="dayLunchBill" readonly>
+                        </div>
+                        <p>Tk</p>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="day"> <b>Total Lunch Bill</b>
+                            </label>
+                        </div>
+                        <label for="day">=</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control font-weight-bold text-center" id="lunchBillTotal" readonly>
+                        </div>
+                        <p>Tk</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h3 class="text-center">Other Bills(If Any)</h3>
+                    <hr>
+                    <div class="input-group">
+                        <input type="date" class="form-control col-sm-4" id="date"> &nbsp
+                        <input type="text" class="form-control col-sm-6" placeholder="Purpose" id="purpose"> &nbsp;
+                        <input type="number" class="form-control col-sm-2" placeholder="Bill" id="amount"> &nbsp;
+                        <button class="btn btn-primary" type="button" id="add">Add</button>
+                    </div>
+                    <br>
+                    <ol>
+                    </ol>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="day"><b>Total Other Bill</b></label>
+                        </div>
+                        <label for="day">=</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control font-weight-bold text-center" id="billTotal" readonly>
+                        </div>
+                        <p>Tk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr class="w-25">
+        <br>
+        <div class="container">
+            <div class="col-md-12">
+                <h3 class="text-center">Total Salary Count</h3>
+                <hr class="w-50">
+                <div class="row text-center">
+                    <div class="col-sm-6">
+                        <label for="day"><i class="fas fa-arrow-right"></i> &nbsp; Total Lunch Bill</label>
+                    </div>
+                    <label for="day">=</label>
+                    <div class="col-sm-2">
+                        <input class="form-control text-center" id="totalLunchBill" readonly>
+                    </div>
+                    <p>Tk</p>
+                </div>
+                <br>
+                <div class="row text-center">
+                    <div class="col-sm-6">
+                        <label for="day"> <i class="fas fa-arrow-right"></i> &nbsp; Total Others Bill</label>
+                    </div>
+                    <label for="day">=</label>
+                    <div class="col-sm-2">
+                        <input class="form-control text-center" id="totalOtherBill" readonly>
+                    </div>
+                    <p>Tk</p>
+                </div>
+                <br>
+                <div class="row text-center">
+                    <div class="col-sm-6">
+                        <label for="day"> <i class="fas fa-arrow-right"></i> &nbsp; Current Salary</label>
+                    </div>
+                    <label for="day">=</label>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control text-center" id="salary">
+                    </div>
+                    <p>Tk</p>
+                </div>
+                <br>
+                <div class="row text-center">
+                    <div class="col-sm-6">
+                        <label for="day"> <i class="fas fa-arrow-right"></i> &nbsp; Prev. Due Salary(if any)</label>
+                    </div>
+                    <label for="day">=</label>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control text-center" id="dueSalary">
+                    </div>
+                    <p>Tk</p>
+                </div>
+                <br>
+                <div class="row text-center">
+                    <div class="col-sm-6">
+                        <button class="btn btn-primary" type="button" id="totalSalary"><b>Total Payble Salary</b></button> &nbsp;
+                    </div>
+                    <label for="day">=</label>
+                    <div class="col-sm-2">
+                        <input class="form-control font-weight-bold text-center" id="paybleSalary" readonly>
+                    </div>
+                    <p>
+                        <b>Tk</b>
+                    </p>
+                </div>
+                <br>
+                <hr class="w-25">
+                <br>
+                <div class="container">
+                <h3 class="text-center">Salary Payment</h3>
+                <hr class="w-50">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-inline">
+                            <label for="paind"><b>Paid Salary</b></label>&nbsp;&nbsp;&nbsp;
+                            <label for="day"><b>=</b></label>&nbsp;
+                            <input type="number" class="form-control text-center font-weight-bold col-sm-3" id="given">
+                            &nbsp; &nbsp;
+                            <p>
+                                <b>Tk</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-inline">
+                            <label for="paind">Paid Date</label>&nbsp;&nbsp;&nbsp;
+                            <label for="day">:</label>&nbsp;
+                            <input type="date" class="form-control text-center">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-inline">
+                                <button class="btn btn-primary" type="button" id="currentDeuSalary"><b></b>Due Salary(if any)</button> &nbsp;&nbsp;
+                            <label for="day"><b>=</b></label>&nbsp;
+                            <input  class="form-control font-weight-bold text-center col-sm-3" id="dueForNext" readonly>
+                            &nbsp;&nbsp;
+                            <p>
+                                <b>Tk</b>
+                            </p>
+                        </div>
+                    </div>
+        </div>
+        <br>
+        <button class="btn btn-default text-right" id="print">Print</button>
+    </div>
+        <br>
+        <br>
+        <br>
+        <hr class="w-75">
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
